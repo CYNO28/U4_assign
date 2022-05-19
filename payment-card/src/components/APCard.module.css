@@ -1,0 +1,58 @@
+.card_btn{
+    background-color: black;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+.card>img{
+    width:10%;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgb(206, 141, 12);    
+}
+.card{
+    background-color: rgb(206, 141, 12);    
+    width: 40rem;
+    height: 25rem;
+    position: relative;
+    margin: auto;
+}
+.card>*{
+    margin: 1rem;
+}
+.card>p:nth-child(1){
+    font-size: 1.25rem;
+    color: black;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+.card>button{
+    margin-left: 3rem;
+}
+.card>h1{
+    margin-left: 3rem;
+    font-size: 3rem;
+}
+.card>p:nth-child(6){
+    font-size: 1.25rem;
+    color: black;
+    /* padding-top: 2rem; */
+    padding-left: 2rem;
+    font-weight: 500;
+}
+#apple{
+    background-color: whitesmoke;
+}
+#apple>img{
+    width: 7rem;
+    height: 4rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    margin: auto;
+    background-color: whitesmoke;
+}
