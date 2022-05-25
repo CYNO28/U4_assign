@@ -1,0 +1,22 @@
+.counter {
+  /* TODO */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+.counter>span{
+  width: 1rem;
+  text-align: center;
+  font-weight:bold ;
+}
+.counter>button{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #8197e8;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+}
