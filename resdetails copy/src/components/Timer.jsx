@@ -6,18 +6,18 @@ const Timer = () => {
   
   useEffect(()=>{
       let id = setInterval(()=>{
-          if(timer > 9){
-              console.log("this should work")
-                clearInterval(id)
-            }
-          settimer((prev)=>(prev+1));
+        
+        settimer((timer)=>timer+1);
       },1000)
-
+      if(timer >= 9){
+        console.log("this should work")
+        clearInterval(id)
+      }
 
       return ()=>{
           clearInterval(id);
       }
-  },[])
+  },[timer])
     return (
     <div>Timer:{timer}</div>
   )
