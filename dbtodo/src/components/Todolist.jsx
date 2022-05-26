@@ -5,9 +5,11 @@ const Todolist = (prop) => {
     <div>
       {prop.todo.map((e,index) => (
         <div key={index}>
-          <input type="checkbox" onChange={
-              e.isCompleted=!e.isCompleted
-              }/>
+          <input type="checkbox" onChange={()=>{
+            e.isCompletd =(!e.isCompletd)
+            // console.log(prop.todo)
+            prop.setCompleted(prop.todo.filter((e)=>{ return e.isCompletd==true}))
+            }}/>
           {e.text}
           
         </div>
