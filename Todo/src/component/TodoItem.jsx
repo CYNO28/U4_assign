@@ -15,7 +15,7 @@ export default function TodoItem(prop) {
           checked={isChecked}
           onChange={(e) => {
             setIsChecked(e.target.checked);
-            console.log(isChecked);
+            
           }}
           id='checkbox'
           />
