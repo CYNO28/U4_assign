@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
+import { useState,useRef } from "react";
 const Form = () => {
-  const [form, setForm] = useState({
+const ref=useRef()
+    const [form, setForm] = useState({
     name: "",
     email: "",
     pass: "",
@@ -30,12 +31,14 @@ const Form = () => {
 const handleOnSubmit=(e)=>{
     e.preventDefault()
     console.log(form)
+    ref.current.focus()
 }
   return (
     <form onSubmit={handleOnSubmit}>
       <div>
         <label htmlFor="">Name:</label>
         <input
+        ref={ref}
           type="text"
           name="name"
           placeholder="Eneter Name.."
