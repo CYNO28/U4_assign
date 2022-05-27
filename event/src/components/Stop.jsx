@@ -7,7 +7,7 @@ const Stop = () => {
         if(!timerID.current){
         let id = setInterval(()=>{
             setWatch((timer)=>timer+1);
-        },1000)
+        },1)
         timerID.current=(id);
 
     }}
