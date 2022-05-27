@@ -12,7 +12,7 @@ const Tic = () => {
   let onClickHandler = (row, col) => {
     // console.log(board)0
     console.log("rc", board);
-    if (board[row][col] === 0) {
+    if (board[row][col] === 0 ) {
       let newBoard = [...board];
       newBoard[row][col] = turn;
       setBoard(newBoard);
@@ -46,13 +46,25 @@ const Tic = () => {
       }
     }
   };
+  let draw = (board) => {
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (board[i][j] ===0) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 
   return (
-    <div>
-      <h1>{x === true ? "x win" : x === false ? "o win" : ""}</h1>
+    <div className={style.bigbox}>
+      <h1>Let's Play <br/>Tic-Tac-Toe</h1>
+      
+      <h1 className={style.winner}>{x === true ? "X Win" : x === false ? "O Win" : x}</h1>
       {board.map((row, rowIndex) => {
         return (
-          <div key={rowIndex}>
+          <div className={x==null?style.rowbox:style.faded} key={rowIndex}>
             {row.map((col, colIndex) => {
               return (
                 <div
@@ -60,6 +72,9 @@ const Tic = () => {
                   onClick={() => {
                     onClickHandler(rowIndex, colIndex);
                     setX(winner(board));
+                    if(draw(board)){
+                      setX("Draw");
+                    }
                   }}
                   key={colIndex}
                 >
@@ -75,9 +90,11 @@ const Tic = () => {
         );
       })}
 
-      <button
+      <button className={style.reset}
         onClick={() => {
-          setBoard(borad);
+          setBoard(borad)
+          setX(null);
+          draw(board);
         }}
       >
         Reset
