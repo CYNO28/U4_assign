@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import Style from "./Form.module.css";
 import { useState,useRef } from "react";
+import DataTable from "./DataTable";
+
 const Form = () => {
+  const [arr, setArr] = useState([])
 const ref=useRef()
     const [form, setForm] = useState({
     name: "",
     email: "",
     Address: "",
     age: 0,
-    isIndian: true,
     married:'',
     deparment:'',
   });
@@ -33,10 +35,12 @@ const ref=useRef()
   });
 const handleOnSubmit=(e)=>{
     e.preventDefault()
+    setArr([...arr,form])
     console.log(form)
     ref.current.focus()
 }
   return (
+    <>
     <form onSubmit={handleOnSubmit} className={Style.form}>
       <div>
         <label htmlFor="">Name:</label>
@@ -96,13 +100,15 @@ const handleOnSubmit=(e)=>{
       <div>
           <label>Profile Pic</label>
           <input type="file"
-          name="resume"
-          files={form.resume}
+          name="pic"
+          files={form.pic}
           onChange={onChange}
            />
       </div>
       <button type="submit">Submit</button>
     </form>
+    <DataTable form={arr}/>
+</>
   );
 };
 
