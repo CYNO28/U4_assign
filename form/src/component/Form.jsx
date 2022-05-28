@@ -8,7 +8,7 @@ const Form = () => {
 const ref=useRef()
     const [form, setForm] = useState({
     name: "",
-    email: "",
+    salary:0,
     Address: "",
     age: 0,
     married:'',
@@ -48,7 +48,7 @@ const handleOnSubmit=(e)=>{
         ref={ref}
           type="text"
           name="name"
-          placeholder="Eneter Name.."
+          placeholder="Enter Name.."
           onChange={onChange}
         />
       </div>
@@ -59,7 +59,17 @@ const handleOnSubmit=(e)=>{
           type="number"
           value={form.age}
           name="age"
-          placeholder="Eneter Age.."
+          placeholder="Enter Age.."
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="">Salary:</label>
+        <input
+          type="number"
+          value={form.salary}
+          name="salary"
+          placeholder="Enter Salary.."
           onChange={onChange}
         />
       </div>

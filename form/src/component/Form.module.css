@@ -2,3 +2,6 @@
     max-width: 200px !important;
     max-height: 200px !important;
 }
+.tr>td{
+    text-align: center !important;
+}
