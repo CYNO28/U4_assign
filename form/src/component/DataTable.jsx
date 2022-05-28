@@ -30,7 +30,7 @@ const DataTable = ({form}) => {
 
         {form.map((item,index)=>{
          return( <Tr key={index}>
-          <Td><img className={style.insideimg} src={URL.createObjectURL(form[index].pic[0])} alt="" /></Td>
+          <Td><img className={style.insideimg} src={form[index].pic?URL.createObjectURL(form[index].pic[0]):''} alt="no img" /></Td>
           <Td>{form[index].name}</Td>
           <Td isNumeric>{form[index].age}</Td>
           <Td >{form[index].Address}</Td>

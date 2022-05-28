@@ -13,6 +13,7 @@ const ref=useRef()
     age: 0,
     married:'',
     deparment:'',
+    pic:undefined,
   });
   const onChange = (e) => {
       console.log(e)
