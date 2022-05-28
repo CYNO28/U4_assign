@@ -5,3 +5,13 @@
 .tr>td{
     text-align: center !important;
 }
+.controlls{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.controlls button{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}

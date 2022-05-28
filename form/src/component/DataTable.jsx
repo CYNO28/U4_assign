@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import style from './Form.module.css'
-const DataTable = ({form}) => {
+const DataTable = ({form,onDel}) => {
   return (
     <div><TableContainer>
     <Table variant='simple'>
@@ -36,6 +36,8 @@ const DataTable = ({form}) => {
           <Td >{form[index].Address}</Td>
           <Td isNumeric>{form[index].salary}</Td>
           <Td isNumeric>{form[index].department}</Td>
+          <Td isNumeric><button onClick={()=>onDel(index)}>Delete</button></Td>
+
         </Tr>)
        })}         
 

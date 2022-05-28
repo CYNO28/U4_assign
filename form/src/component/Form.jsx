@@ -5,6 +5,7 @@ import DataTable from "./DataTable";
 
 const Form = () => {
   const [arr, setArr] = useState([])
+  const [farr, setfarr] = useState(arr)
 const ref=useRef()
     const [form, setForm] = useState({
     name: "",
@@ -40,6 +41,27 @@ const handleOnSubmit=(e)=>{
     console.log(form)
     ref.current.focus()
 }
+const onDelHandler=(index)=>{
+  setArr( arr.filter((item,i)=>{
+       if(i===index){
+           return false
+       }
+       return true
+   }) )
+
+
+}
+const onSortHandler=()=>{
+setArr([...arr.sort((a,b)=>{
+    return a.salary-b.salary
+})])
+}
+const onFilterHandler=(e)=>{
+  setArr([...arr.filter((item)=>{
+      return item.department===e.target.value
+  })])
+}
+
   return (
     <>
     <form onSubmit={handleOnSubmit} className={Style.form}>
@@ -118,7 +140,23 @@ const handleOnSubmit=(e)=>{
       </div>
       <button type="submit">Submit</button>
     </form>
-    <DataTable form={arr}/>
+    <div className={Style.controlls}>
+<select name="filter" id="" onChange={onFilterHandler}>
+    <option value="none">Select Filter</option>
+    <option value="cs">CS</option>
+    <option value="sv">SV</option>
+    <option value="ec">EC</option>
+</select>
+
+
+
+
+<button onClick={onSortHandler}>Sort</button>
+    </div>
+    <DataTable form={arr} onDel={onDelHandler}/>
+
+
+
 </>
   );
 };
