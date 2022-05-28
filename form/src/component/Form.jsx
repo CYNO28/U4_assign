@@ -5,7 +5,7 @@ import DataTable from "./DataTable";
 
 const Form = () => {
   const [arr, setArr] = useState([])
-  const [farr, setfarr] = useState(arr)
+  const [farr, setfarr] = useState([])
 const ref=useRef()
     const [form, setForm] = useState({
     name: "",
@@ -38,6 +38,7 @@ const ref=useRef()
 const handleOnSubmit=(e)=>{
     e.preventDefault()
     setArr([...arr,form])
+    setfarr([...arr,form])
     console.log(form)
     ref.current.focus()
 }
@@ -57,9 +58,16 @@ setArr([...arr.sort((a,b)=>{
 })])
 }
 const onFilterHandler=(e)=>{
-  setArr([...arr.filter((item)=>{
-      return item.department===e.target.value
+  if(e.target.value=='none'){
+    
+      setfarr([...arr])
+      console.log()
+  }else{
+  setfarr([...arr.filter((item)=>{
+      return item.department==e.target.value
   })])
+}
+  // console.log(e.target.value)
 }
 
   return (
@@ -153,7 +161,7 @@ const onFilterHandler=(e)=>{
 
 <button onClick={onSortHandler}>Sort</button>
     </div>
-    <DataTable form={arr} onDel={onDelHandler}/>
+    <DataTable form={farr} onDel={onDelHandler}/>
 
 
 
