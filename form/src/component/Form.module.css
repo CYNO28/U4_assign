@@ -16,7 +16,7 @@
   padding: 10px;
 }
 .form {
-  width: 60%;
+  min-width: 100%;
   /* border: 1px solid red; */
   margin-left: 30%;
   display: flex;
@@ -55,5 +55,5 @@
   padding: 10px;
   border-radius: 7px;
 
-  font-weight:bold ;
+  font-weight: bold;
 }
