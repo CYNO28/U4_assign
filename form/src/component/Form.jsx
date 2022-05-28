@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
+import Style from "./Form.module.css";
 import { useState,useRef } from "react";
 const Form = () => {
 const ref=useRef()
     const [form, setForm] = useState({
     name: "",
     email: "",
-    pass: "",
+    Address: "",
     age: 0,
     isIndian: true,
+    married:'',
+    deparment:'',
   });
   const onChange = (e) => {
-    //   console.log(e)
+      console.log(e)
     let { name, type, value, checked, files } = e.target;
     if (type === "checkbox") {
    
@@ -34,7 +37,7 @@ const handleOnSubmit=(e)=>{
     ref.current.focus()
 }
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleOnSubmit} className={Style.form}>
       <div>
         <label htmlFor="">Name:</label>
         <input
@@ -47,24 +50,6 @@ const handleOnSubmit=(e)=>{
       </div>
 
       <div>
-        <label htmlFor="">Email:</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Eneter email.."
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="">Password:</label>
-        <input
-          type="text"
-          name="pass"
-          placeholder="Eneter password.."
-          onChange={onChange}
-        />
-      </div>
-      <div>
         <label htmlFor="">Age:</label>
         <input
           type="number"
@@ -75,25 +60,41 @@ const handleOnSubmit=(e)=>{
         />
       </div>
       <div>
-        <input type="checkbox" checked={form.isIndian} name="isIndian" onChange={onChange} />
-        <label htmlFor="">isIndian</label>
+        <label htmlFor="">Address:</label>
+        <input
+          type="text"
+          name="Address"
+          placeholder="Eneter Address"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="">Department</label>
+       <select name="department" id="" onChange={onChange}>
+            <option value="none">Select Department</option>
+            <option value="cs">computer Science</option>
+            <option value="sv">cevil</option>
+            <option value="ec">electrical</option>
+
+       </select>
+      </div>
+     
+      <div>
+          <input type="radio"
+          name="married"
+          onChange={onChange}
+          value='Yes' />
+    <label htmlFor="">Married</label>
       </div>
       <div>
           <input type="radio"
-          name="gender"
+          name="married"
           onChange={onChange}
-          value='male' />
-    <label htmlFor="">Male</label>
+          value='No' />
+    <label htmlFor="">Single</label>
       </div>
       <div>
-          <input type="radio"
-          name="gender"
-          onChange={onChange}
-          value='female' />
-    <label htmlFor="">Female</label>
-      </div>
-      <div>
-          <label>User Resume:</label>
+          <label>Profile Pic</label>
           <input type="file"
           name="resume"
           files={form.resume}
