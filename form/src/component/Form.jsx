@@ -74,7 +74,7 @@ const onFilterHandler=(e)=>{
     <>
     <form onSubmit={handleOnSubmit} className={Style.form}>
       <div>
-        <label htmlFor="">Name:</label>
+        <label htmlFor="">Name :</label>
         <input
         ref={ref}
           type="text"
@@ -85,7 +85,7 @@ const onFilterHandler=(e)=>{
       </div>
 
       <div>
-        <label htmlFor="">Age:</label>
+        <label htmlFor="">Age :</label>
         <input
           type="number"
           value={form.age}
@@ -95,7 +95,7 @@ const onFilterHandler=(e)=>{
         />
       </div>
       <div>
-        <label htmlFor="">Salary:</label>
+        <label htmlFor="">Salary :</label>
         <input
           type="number"
           value={form.salary}
@@ -105,7 +105,7 @@ const onFilterHandler=(e)=>{
         />
       </div>
       <div>
-        <label htmlFor="">Address:</label>
+        <label htmlFor="">Address :</label>
         <input
           type="text"
           name="Address"
@@ -114,7 +114,7 @@ const onFilterHandler=(e)=>{
         />
       </div>
       <div>
-        <label htmlFor="">Department</label>
+        <label htmlFor="">Department:</label>
        <select name="department" id="" onChange={onChange}>
             <option value="none">Select Department</option>
             <option value="cs">computer Science</option>
@@ -123,23 +123,25 @@ const onFilterHandler=(e)=>{
 
        </select>
       </div>
-     
+      <div className={Style.mar}>
       <div>
           <input type="radio"
           name="married"
           onChange={onChange}
           value='Yes' />
-    <label htmlFor="">Married</label>
+    <label htmlFor="">Married :</label>
       </div>
       <div>
           <input type="radio"
           name="married"
           onChange={onChange}
           value='No' />
-    <label htmlFor="">Single</label>
-      </div>
+    <label htmlFor="">Single :</label>
+      </div></div>
+
+
       <div>
-          <label>Profile Pic</label>
+          <label>Upload Pic :</label>
           <input type="file"
           name="pic"
           files={form.pic}
