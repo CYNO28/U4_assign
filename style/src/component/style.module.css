@@ -1,0 +1,21 @@
+.icons_p p svg{
+    display:inline-block;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.icons_p p{
+    display: flex;
+    width: 100%;
+    /* border :1px solid red; */
+    align-items: center;
+    padding: 15px;
+    border-radius:.5rem ;    
+}
+.bigbox{
+    width: 15rem !important;
+    
+}
+.icons_p p:hover{
+    background-color: #0BC5EA;
+    color: white;
+}
