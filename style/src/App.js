@@ -3,11 +3,13 @@ import './App.css';
 
 import Draw from './component/Draw'
 import Navbar from './component/Navbar'
+import Payment from './component/Payment';
 function App() {
   return (
     <div className="App">
 
- <Navbar></Navbar>
+ {/* <Navbar></Navbar> */}
+ <Payment/>
           </div>
   );
 }

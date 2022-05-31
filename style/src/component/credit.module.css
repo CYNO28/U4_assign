@@ -1,0 +1,46 @@
+.ccv {
+  display: flex;
+}
+.ccv > div {
+  /* border: 1px solid red; */
+  align-items: center;
+  text-align: start;
+  width: 7rem;
+}
+.ccv label {
+  padding-left: 20px;
+}
+.form {
+  width: 50%;
+  border: 1px solid red;
+ 
+}
+.form label {
+  text-align: start;
+  font-size: 0.7rem;
+  margin: 0;
+}
+.form input {
+  margin-top: -1rem;
+  /* border: 1px solid red; */
+}
+.form svg {
+  /* border: 1px solid black; */
+  margin-top: -2rem;
+}
+.imgdiv{
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+}
+.superparent{
+    display: flex;
+    margin: auto;
+    width: 70%;
+    border: 1px solid black;
+}
+.paybtn{
+    width: 6rem;
+    margin: 1rem;
+    height: 2rem !important;
+}
