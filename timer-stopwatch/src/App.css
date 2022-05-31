@@ -40,3 +40,14 @@ h1{
   font-size: 32px;
   font-weight: 400;
 }
+button{
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 20px;
+  border: none;
+  
+  background-color: #3167fa;
+  color: #fff;
+  margin-left: .5rem;
+  cursor: pointer;
+}
