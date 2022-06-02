@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './component/Home';
-import About from './component/About';
-import Navbar from './component/Navbar';
-import Products from './component/Products';
-import {Routes, Route} from 'react-router-dom';
-import Product from './component/Product';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Navbar from "./component/Navbar";
+import RequireAuth from "./Hoc/RequireAuth";
+import Feeds from "./pages/Feeds";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Posts from "./pages/Posts";
+
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <Routes>
-        {/* <Route path='/'element={}/> */}
-        <Route path='/'element={<Home/>}/>
-        <Route path='/about'element={<About/>}/>
-      
-        <Route path='/products/*'element={<Products/>}>
-        <Route path=':id'element={<Product/>}/>
-
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="feeds"
+          element={
+            <RequireAuth>
+              <Feeds />
+             </RequireAuth> 
+          }
+        />
+        <Route
+          path="posts"
+          element={
+            <RequireAuth>
+              <Posts />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );
