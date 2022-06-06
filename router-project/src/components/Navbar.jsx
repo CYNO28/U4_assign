@@ -65,6 +65,7 @@ export default function Simple() {
               as={"nav"}
               spacing={4}
               size={"md"}
+              // style={{marginLeft:"auto"}}
               // marginLeft="-10"
               display={{ base: "none", md: "flex" }}
             >
