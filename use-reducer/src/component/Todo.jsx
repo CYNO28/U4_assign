@@ -8,13 +8,14 @@ const Todo = () => {
   const ref = useRef();
 
   return (
-    <div  >
-      <h1>
-        Todo
-        <br />
+    <div className={style.todocontainer}  >
+      <h1 className={style.heading}>
+        My Dashboard
+        
         <button onClick={()=>{dispatch1({type:'CHANGE'})}}>{mode?"DARK":"LIGHT"}</button>
        
       </h1>
+      <div className={style.todoinput}>
       <input type="text" ref={ref} />
       <button
         onClick={() => {
@@ -31,6 +32,7 @@ const Todo = () => {
       >
         ADD
       </button>
+      </div>
     </div>
   );
 };
