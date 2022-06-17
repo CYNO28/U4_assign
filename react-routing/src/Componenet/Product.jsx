@@ -5,7 +5,7 @@ const Product = () => {
     const [product, setproduct] = useState([])
     const [Aproduct, setAproduct] = useState([])
     const {id} =useParams()
-console.log(useParams())
+
 useEffect (() => {
   const fetchProduct = async () => {
   let r=await fetch(`http://localhost:8080/products/${id}`)
@@ -17,13 +17,11 @@ fetch(`http://localhost:8080/products`).then(res=>res.json()).then(data=>setApro
 if(id)fetchProduct()
  
 }, [id])
-console.log(id)
+// console.log(id)
  return (
     <div className='outlet'>
         {id<Aproduct.length?`${product.name} | ${product.price}$` :"Product does not exist"}
-         
-    
-    
+
     </div>
   )
 }

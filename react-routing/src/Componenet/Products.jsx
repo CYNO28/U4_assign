@@ -9,7 +9,8 @@ import { Link, Outlet, useParams } from "react-router-dom";
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
-  return <div className="navbar products">{Product.map((e)=>(
+  return <div className="navbar products">
+    {Product.map((e)=>(
       <Link key={e.id} to={`/Products/${e.id}`}>{ e.name }</Link>
   ))}
   <Outlet ></Outlet>
